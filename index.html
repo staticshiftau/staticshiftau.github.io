@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Shift - Digital Marketing Agency</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: centre;
+            justify-content: centre;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: centre;
+            max-width: 600px;
+        }
+        h1 {
+            font-size: 48px;
+            color: #667eea;
+            margin-bottom: 16px;
+        }
+        p {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+        }
+        .status {
+            margin-top: 40px;
+            padding: 20px;
+            background: #f0f9ff;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Static Shift</h1>
+        <p>Digital Marketing & Advertising Solutions</p>
+        <div class="status">
+            <p><strong>Website Coming Soon</strong></p>
+            <p style="margin-top: 8px; font-size: 14px;">We're building something amazing. Stay tuned!</p>
+        </div>
+    </div>
+</body>
+</html>
+```
+
+4. Commit the file (green button at bottom)
+
+---
+
+### **Step 3: Transfer Your Existing Ad Portal Repository**
+
+You've already got `ads-approval-staticshift`, so let's set it up properly:
+
+**A. Make sure it's transferred to staticshiftau** (if not already done):
+1. Go to: https://github.com/paulinebeguico/ads-approval-staticshift
+2. Settings → Scroll to "Danger Zone"
+3. Click "Transfer ownership"
+4. New owner: `staticshiftau`
+5. Confirm
+
+**B. After transfer, the repository will be at:**
+`https://github.com/staticshiftau/ads-approval-staticshift`
+
+---
+
+## **PHASE 3: Configure DNS Settings**
+
+### **Step 4: Point Your Domain to GitHub**
+
+**A. Log into your domain registrar** (wherever you bought the domain)
+
+**B. Find DNS Settings/Management**
+- Usually called: "DNS Management", "DNS Settings", or "Nameservers"
+
+**C. Add these DNS records:**
+
+**Record 1-4: A Records (for apex domain)**
+```
+Type: A
+Name: @ (or leave blank, or "staticshift.com.au")
+Value: 185.199.108.153
+TTL: 3600
+
+Repeat 3 more times with these IPs:
+185.199.109.153
+185.199.110.153
+185.199.111.153
+```
+
+**Record 5: CNAME (for www subdomain)**
+```
+Type: CNAME
+Name: www
+Value: staticshiftau.github.io.
+TTL: 3600
